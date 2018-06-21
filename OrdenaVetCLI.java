@@ -5,10 +5,11 @@
 *  Prof.: Me. Sergio ESPINOLA. http://mestre.sergiodbe.net/IFPB
 *  Objetivo: Este programa é MENU (CLI) com várias opções de java estruturado!
 *
-*  Data: 13/7/2017.
+*  Data: 21/06/2018.
 */
+package net.sergiodbe.mestre.ifpb.edados181;
 
-package net.sergiodbe.mestre.edados;
+
 
 import static java.lang.System.out;
 
@@ -51,6 +52,7 @@ public class OrdenaVetCLI {
         out.println("|       102 =  BUBBLE_SORT-flag       |");
         out.println("|       103 =  COMB_SORT              |");
         out.println("|       104 = MERGE_SORT              |");
+        out.println("|       110 = SELECT_SORT             |");
         out.println("|   ex                                |");
         out.println("|   java OrdenaVetCLI                 |");
         out.println("|        101 5 1 12 -5 -16            |");
@@ -241,8 +243,20 @@ public class OrdenaVetCLI {
                     */
                     
                     //Chamada do Algoritmo de Ordenação!
-                    break;
-                    
+                break;
+                
+                
+                case 110:
+                // TODO 
+                    // A EXEMPLO DAS OUTRAS SEÇÕES (CASE),
+                    // FINALIZAR E ADAPTAR PARA O SELECTION SORT
+                     out.println("Seleção 110 (SELECTION SORT)!");
+                     out.println("POR FINALIZAR... Volte mais tarde!");
+
+                     
+                break;
+                
+                
                 default:
                     out.println("Seleção Inválida");
                     break; // Esta parte é opcional
@@ -274,7 +288,24 @@ public class OrdenaVetCLI {
             }
             imprimirNumeros(vetorHomog);
         }
-    }
+    } //bb
+    
+    
+    
+    // ALGORITMOS (parte LÓGICA, CONSTRUÍDA paralela ao main()    )
+    // Selection_sort
+    // Fonte:  https://www.cs.cmu.edu/~adamchik/15-121/lectures/Sorting%20Algorithms/sorting.html
+    //
+    public static void selectionSort(int[] vetorHomog){
+        for (int i = 0; i < vetorHomog.length-1; i++) {
+          int min = i;
+            for (int j = i+1; j < vetorHomog.length; j++)
+                if (vetorHomog[j] < vetorHomog[min]) min = j;
+            int temp = vetorHomog[i];
+            vetorHomog[i] = vetorHomog[min];
+            vetorHomog[min] = temp;
+    } 
+}
 
 
     // ALGORITMOS (parte LÓGICA, CONSTRUÍDA paralela ao main()    )
